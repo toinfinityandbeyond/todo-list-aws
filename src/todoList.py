@@ -31,9 +31,9 @@ def get_item(key, dynamodb=None):
         )
 
     except ClientError as e:
-        print(e.response['Error']['Message']) # pragma: no cover
+        print(e.response['Error']['Message'])  # pragma: no cover
     else:
-        print('Result getItem:'+str(result)) # pragma: no cover
+        print('Result getItem:'+str(result))  # pragma: no cover
         if 'Item' in result:
             return result['Item']
 
@@ -48,7 +48,7 @@ def get_items(dynamodb=None):
 def put_item(text, dynamodb=None):
     table = get_table(dynamodb)
     timestamp = str(time.time())
-    print('Table name:' + table.name) # pragma: no cover
+    print('Table name:' + table.name)  # pragma: no cover
     item = {
         'id': str(uuid.uuid1()),
         'text': text,
@@ -66,7 +66,7 @@ def put_item(text, dynamodb=None):
         }
 
     except ClientError as e:
-        print(e.response['Error']['Message']) # pragma: no cover
+        print(e.response['Error']['Message'])  # pragma: no cover
     else:
         return response
 
@@ -95,7 +95,7 @@ def update_item(key, text, checked, dynamodb=None):
         )
 
     except ClientError as e:
-        print(e.response['Error']['Message']) 
+        print(e.response['Error']['Message'])  # pragma: no cover
     else:
         return result['Attributes']
 
@@ -111,7 +111,7 @@ def delete_item(key, dynamodb=None):
         )
 
     except ClientError as e:
-        print(e.response['Error']['Message']) 
+        print(e.response['Error']['Message'])  # pragma: no cover
     else:
         return
 
