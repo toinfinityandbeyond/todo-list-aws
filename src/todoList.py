@@ -95,7 +95,7 @@ def update_item(key, text, checked, dynamodb=None):
         )
 
     except ClientError as e:
-        print(e.response['Error']['Message']) # pragma: no cover
+        print(e.response['Error']['Message']) 
     else:
         return result['Attributes']
 
@@ -111,7 +111,7 @@ def delete_item(key, dynamodb=None):
         )
 
     except ClientError as e:
-        print(e.response['Error']['Message']) # pragma: no cover
+        print(e.response['Error']['Message']) 
     else:
         return
 
