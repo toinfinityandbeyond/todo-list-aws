@@ -99,17 +99,10 @@ pytest -s test/integration/todoApiTest.py
 
 Para ejecutar los tests **unitarios** es necesario ejecutar los siguientes comandos:
 ```bash
-python3.7 -m venv pyenvunittests
-source pyenvunittests/bin/activate
-python3.7 -m pip install --upgrade pip
-python3.7 -m pip install boto3
-python3.7 -m pip install moto
-python3.7 -m pip install mock==4.0.2
-python3.7 -m pip install coverage==4.5.4
-export PYTHONPATH="${PYTHONPATH}:<directorio de la aplicación>"
-export DYNAMODB_TABLE=todoUnitTestsTable
-python test/unit/TestToDo.py
+bash testLocal.sh
 ```
+Comprueba que en este archivo se está llamando a la versión de python correcta.
+
 Otra alternativa es ejecutar los test desde la raíz del proyecto invocando a los scripts alojados dentro de la carpeta pipelines:
 ```bash
 # Ejecución Pruebas
